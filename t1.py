@@ -1,22 +1,21 @@
-project_score = int(input("Enter the project score: "))
-internal_score = int(input("Enter the internal score: "))
-external_score = int(input("Enter the external score: "))
-if(project_score>=50 and internal_score>=50 and external_score>=50):
-    project=(project_score*70)/100
-    internal=(internal_score*10)/100
-    external=(external_score*20)/100
-    total= project+internal+external
-    if(total>=90):
-        print("A Grade")
-    elif(total>80):
-        print("B Grade")
-    else:
-        print("C Grade")
-else:
-    if(project_score<50):
-        print("You're failed in project with score: ",project_score)
-    if(internal_score<50):
-            print("You're failed in internal with score: ", internal_score)
-    if(external_score<50):
-                print("You're failed in external with score: ", external_score)
+def calculate_gross_salary():
+    salary = float(input("Enter the salary amount: "))
 
+    if salary < 0:
+        print("Salary cannot be negative.")
+        return
+
+    if salary < 10000:
+        hra = (salary * 67) / 100
+        da = (salary * 73) / 100
+    elif salary < 20000:
+        hra = (salary * 69) / 100
+        da = (salary * 76) / 100
+    else:
+        hra = (salary * 73) / 100
+        da = (salary * 89) / 100
+
+    gross = salary + hra + da
+    print(f"Gross Salary: {gross}")
+
+calculate_gross_salary()
