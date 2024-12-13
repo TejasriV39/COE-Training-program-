@@ -12,7 +12,7 @@ class Bank:
         elif(case==3):
             obj.bal_enquiry()
         else:
-            exit()
+            obj.exit()
     def validate(self):
         count = 1
         while (count <= 3):
@@ -35,14 +35,16 @@ class Bank:
     def withdraw(self):
         withdrawl_amt=int(input("Enter the amount to be withdrawn"))
         new_balance=self.balance-500
-        if withdrawl_amt >= 100 and withdrawl_amt % 100 == 0 and withdrawl_amt <new_balance and withdrawl_amt<=20000:
+        if withdrawl_amt >= 100 and withdrawl_amt % 100 == 0 and withdrawl_amt <=new_balance and withdrawl_amt<=20000:
             self.balance -=withdrawl_amt
             print(f"New balance: {self.balance}")
         else:
             print("Withdrawl Failed")
-
-
-
+    def bal_enquiry(self):
+        print(f'Your account balance is: ₹{self.balance}')
+    def exit(self):
+        print("Thank you for using our services, Visit again.")
+        exit()
 
 obj=Bank()
 obj.validate()
