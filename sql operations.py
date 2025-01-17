@@ -1,0 +1,10 @@
+import mysql.connector as c
+mydb=c.connect(host="localhost",user="root",password="1234",database="cvr")
+mycursor=mydb.cursor()
+#mycursor.execute("create table students(sname varchar(20),sid int)")
+#mycursor.execute("insert into students values('Tejasri',309)")
+#mycursor.execute("insert into students values('Veena',308)")
+#mycursor.execute("update students set sid=711 where sname='Veena'")
+#mycursor.execute("create table class(cname varchar(20),cid int)")
+#mycursor.execute("drop table class")
+mydb.commit()
